@@ -12,12 +12,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import { Badge, Stack } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar({ cart }) {
-  const cartLength = Object.keys(cart).length;
+  const cartLength = Object?.keys(cart)?.length;
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -60,7 +61,7 @@ function Navbar({ cart }) {
           variant="h4"
           noWrap
           component="a"
-          href="#app-bar-with-responsive-menu"
+          href="/"
           sx={{
             mr: 2,
             display: { xs: "none", md: "flex" },
@@ -160,17 +161,19 @@ function Navbar({ cart }) {
         <Stack spacing={2} direction="row">
           <SearchIcon />
 
-          <Badge
-            badgeContent={cartLength}
-            sx={{
-              "& .MuiBadge-badge": {
-                color: "#fff",
-                backgroundColor: "#ee2761",
-              },
-            }}
-          >
-            <AddShoppingCartIcon />
-          </Badge>
+          <Link to="/cart">
+            <Badge
+              badgeContent={cartLength}
+              sx={{
+                "& .MuiBadge-badge": {
+                  color: "#fff",
+                  backgroundColor: "#ee2761",
+                },
+              }}
+            >
+              <AddShoppingCartIcon />
+            </Badge>
+          </Link>
           <Box sx={{ flexGrow: 0 }}>
             <PermIdentityIcon onClick={handleOpenUserMenu} sx={{ p: 0 }} />
             <Menu
