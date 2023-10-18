@@ -1,8 +1,11 @@
+import { Container } from "@mui/material";
 import Home from "./pages/Home";
 function App() {
   return (
     <>
-      <Home />
+      <Container maxWidth="xl">
+        <Home />
+      </Container>
     </>
   );
 }

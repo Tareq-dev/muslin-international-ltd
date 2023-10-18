@@ -1,11 +1,15 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Header from "../components/Header";
+import Category from "../components/Category";
 
 function Home() {
   return (
-    <div>
+    <main>
       <Navbar />
-    </div>
+      <Header />
+      <Category />
+    </main>
   );
 }
 

@@ -43,147 +43,145 @@ function Navbar() {
       position="static"
       sx={{ backgroundColor: "transparent", boxShadow: "none", color: "black" }}
     >
-      <Container maxWidth="xl">
-        <Toolbar
-          disableGutters
+      <Toolbar
+        disableGutters
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center", // Add this line to vertically center items
+        }}
+      >
+        <Typography
+          variant="h6"
+          noWrap
+          component="a"
+          href="#app-bar-with-responsive-menu"
           sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center", // Add this line to vertically center items
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
           }}
         >
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
+          Muslin
+        </Typography>
+
+        {/* ******************** Mobile********************* */}
+
+        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="inherit"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
             sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              display: { xs: "block", md: "none" },
             }}
           >
-            Muslin
-          </Typography>
+            {pages.map((page) => (
+              <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{page}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+        <Typography
+          variant="h5"
+          noWrap
+          component="a"
+          href="#app-bar-with-responsive-menu"
+          sx={{
+            mr: 2,
+            display: { xs: "flex", md: "none" },
+            flexGrow: 1,
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
+          Muslin
+        </Typography>
 
-          {/* ******************** Mobile********************* */}
+        {/* ******************** Mobile********************* */}
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: { xs: "none", md: "flex" },
+            alignItems: "center", // Center vertically
+            justifyContent: "center", // Center horizontally
+          }}
+        >
+          {pages.map((page) => (
+            <Button
+              key={page}
+              onClick={handleCloseNavMenu}
+              sx={{
+                mx: 2,
+                my: 2,
+                color: "black",
+                display: "block",
+                fontWeight: "bold",
+              }}
             >
-              <MenuIcon />
-            </IconButton>
+              {page}
+            </Button>
+          ))}
+        </Box>
+        <Stack spacing={2} direction="row">
+          <SearchIcon />
+          <AddShoppingCartIcon />
+          <Box sx={{ flexGrow: 0 }}>
+            <PermIdentityIcon onClick={handleOpenUserMenu} sx={{ p: 0 }} />
             <Menu
+              sx={{ mt: "45px" }}
               id="menu-appbar"
-              anchorEl={anchorElNav}
+              anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
-                horizontal: "left",
+                horizontal: "right",
               }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            Muslin
-          </Typography>
-
-          {/* ******************** Mobile********************* */}
-
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-              alignItems: "center", // Center vertically
-              justifyContent: "center", // Center horizontally
-            }}
-          >
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  mx: 2,
-                  my: 2,
-                  color: "black",
-                  display: "block",
-                  fontWeight: "bold",
-                }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-          <Stack spacing={2} direction="row">
-            <SearchIcon />
-            <AddShoppingCartIcon />
-            <Box sx={{ flexGrow: 0 }}>
-              <PermIdentityIcon onClick={handleOpenUserMenu} sx={{ p: 0 }} />
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-          </Stack>
-        </Toolbar>
-      </Container>
+        </Stack>
+      </Toolbar>
     </AppBar>
   );
 }
