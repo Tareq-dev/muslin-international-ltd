@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, addToCart }) => {
   return (
     <Card sx={{ maxWidth: 345, height: 350 }}>
       <CardMedia
@@ -43,8 +43,12 @@ const ProductCard = ({ product }) => {
               <Typography>({product.rating.count} reviews)</Typography>
             </Box>
           </div>
-          <IconButton aria-label="add to cart">
-            <AddShoppingCartIcon color="primary" />
+          <IconButton
+            onClick={() => addToCart(product)}
+            aria-label="add to cart"
+            sx={{ bgcolor: "#ee2761" }}
+          >
+            <AddShoppingCartIcon sx={{ color: "#fff" }} />
           </IconButton>
         </Box>
       </CardContent>

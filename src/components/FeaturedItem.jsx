@@ -7,7 +7,8 @@ const buttonStyle = {
   color: "white",
   marginTop: "20px",
 };
-function FeaturedItem() {
+function FeaturedItem({ addToCart, cart }) {
+  //   console.log(cart);
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ function FeaturedItem() {
           {data?.map((product, index) => (
             <Grid item xs={2} sm={4} md={3} key={index}>
               <Box>
-                <ProductCard product={product} />
+                <ProductCard addToCart={addToCart} product={product} />
               </Box>
             </Grid>
           ))}

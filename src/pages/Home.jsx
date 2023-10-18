@@ -7,14 +7,14 @@ import FeaturedItem from "../components/FeaturedItem";
 import Footer from "../components/Footer";
 import Blog from "../components/Blog";
 
-function Home() {
+function Home({ addToCart, cart }) {
   return (
     <main>
-      <Navbar />
+      <Navbar cart={cart}/>
       <Header />
       <Category />
       <NewArival />
-      <FeaturedItem />
+      <FeaturedItem addToCart={addToCart} cart={cart} />
       <Blog />
       <Footer />
     </main>
