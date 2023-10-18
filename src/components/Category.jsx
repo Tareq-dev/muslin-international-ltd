@@ -1,5 +1,4 @@
 import { Box, Stack, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
 
 import Man3Icon from "@mui/icons-material/Man3";
 import Woman3Icon from "@mui/icons-material/Woman2";
@@ -9,13 +8,8 @@ import electronics from "../assets/images/electronics.jpg";
 import jewelary from "../assets/images/jewelary.jpg";
 
 function Category() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setData(json));
-  }, []);
-  //   console.log(data.map(c=>c.category));
+ 
+  
   return (
     <Box sx={{ my: 10 }}>
       <Typography variant="h4" fontWeight="bold">
