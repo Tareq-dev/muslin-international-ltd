@@ -18,7 +18,7 @@ function NewArival() {
     >
       <Box
         sx={{
-          height: "430px",
+          height: "400px",
           width: "50%",
           position: "relative",
           marginTop: "80px",
@@ -32,7 +32,7 @@ function NewArival() {
             height: "550px",
             padding: "0px 15px 0px 10px",
             position: "absolute",
-            top: "-120px",
+            top: "-150px",
           }}
         />
       </Box>

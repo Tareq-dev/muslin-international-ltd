@@ -1,21 +1,21 @@
 import { Box, Stack, Typography } from "@mui/material";
-
-import Man3Icon from "@mui/icons-material/Man3";
-import Woman3Icon from "@mui/icons-material/Woman2";
 import men from "../assets/images/man.jpg";
 import woman from "../assets/images/woman.jpg";
 import electronics from "../assets/images/electronics.jpg";
 import jewelary from "../assets/images/jewelary.jpg";
 
 function Category() {
- 
-  
   return (
     <Box sx={{ my: 10 }}>
       <Typography variant="h4" fontWeight="bold">
         Popular Category
       </Typography>
-      <Stack sx={{ my: 10 }} direction="row" spacing={4} justifyContent="center">
+      <Stack
+        sx={{ my: 10 }}
+        direction="row"
+        spacing={4}
+        justifyContent="center"
+      >
         <Box
           sx={{
             width: "200px",

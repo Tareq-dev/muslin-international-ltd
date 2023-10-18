@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 
 import ProductCard from "./ProductCard";
-
+const buttonStyle = {
+  backgroundColor: "#ee2761",
+  color: "white",
+  marginTop: "20px",
+};
 function FeaturedItem() {
   const [data, setData] = useState([]);
 
@@ -31,9 +35,9 @@ function FeaturedItem() {
         }}
         my={12}
       >
-        <Grid container rowSpacing={5} columnSpacing={2} mx={12}>
-          {data?.slice(0, 9)?.map((product, index) => (
-            <Grid item xs={2} sm={4} md={4} key={index}>
+        <Grid container rowSpacing={8} columnSpacing={2} mx={2}>
+          {data?.map((product, index) => (
+            <Grid item xs={2} sm={4} md={3} key={index}>
               <Box>
                 <ProductCard product={product} />
               </Box>

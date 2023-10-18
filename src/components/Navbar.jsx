@@ -40,8 +40,14 @@ function Navbar() {
 
   return (
     <AppBar
-      position="static"
-      sx={{ backgroundColor: "transparent", boxShadow: "none", color: "black" }}
+      position="sticky"
+      sx={{
+        marginTop: "20px",
+        backgroundColor: "white",
+        boxShadow: "none",
+        borderBottom: "5px solid #d4f8fc",
+        color: "black",
+      }}
     >
       <Toolbar
         disableGutters
@@ -52,7 +58,7 @@ function Navbar() {
         }}
       >
         <Typography
-          variant="h6"
+          variant="h4"
           noWrap
           component="a"
           href="#app-bar-with-responsive-menu"

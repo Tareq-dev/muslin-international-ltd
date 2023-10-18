@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
         image={product.image}
       />
       <CardContent>
-        <Typography variant="h6" fontWeight="bold" component="div">
+        <Typography variant="subtitle1" fontWeight="bold" component="div">
           {product?.title.split(" ").slice(0, 3).join(" ")}
         </Typography>
         <Typography variant="body2" color="text.secondary">
