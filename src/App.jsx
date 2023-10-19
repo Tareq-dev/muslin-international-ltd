@@ -12,7 +12,8 @@ function App() {
   // Add to card
 
   const addToCart = (item) => {
-    const { id, title, price } = item;
+    console.log(item);
+    const { id, title, price, image } = item;
 
     if (cart[id]) {
       toast.error("Already exist in cart");
@@ -21,7 +22,7 @@ function App() {
       setCart(updatedCart);
     } else {
       toast.success("A Product added");
-      setCart({ ...cart, [id]: { title, price, quantity: 1 } });
+      setCart({ ...cart, [id]: { title, image, price, quantity: 1 } });
     }
   };
 
