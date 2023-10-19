@@ -11,25 +11,52 @@ function Header() {
 
   return (
     <Stack
-      direction="row"
-      height="500px"
+      direction={{ xs: "column", sm: "row" }}
+      height={{ xs: "auto", sm: "500px" }}
       bgcolor="#d4f8fc"
       justifyContent="space-between"
     >
       <Box
         sx={{
-          width: "50%",
+          width: {
+            xs: "100%",
+            sm: "50%",
+          },
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          paddingX: "100px",
+          paddingX: {
+            xs: "20px",
+            sm: "100px",
+          },
         }}
       >
         <Box>
-          <Typography variant="h3" fontWeight="bold" gutterBottom>
+          <Typography
+            variant="h3"
+            fontWeight="bold"
+            sx={{
+              "@media (max-width: 600px)": {
+                fontSize: "24px",
+                textAlign: "center",
+              },
+            }}
+            gutterBottom
+          >
             Collection and Style <br /> for everyone
           </Typography>
-          <Typography color="gray" gutterBottom textAlign="justify">
+          <Typography
+            color="gray"
+            gutterBottom
+            textAlign="justify"
+            sx={{
+              "@media (max-width: 600px)": {
+                fontSize: "14px",
+                width: "90%",
+                paddingX: "8px",
+              },
+            }}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
             praesentium dolor consequatur distinctio consectetur, corrupti
             perspiciatis quibusdam nam placeat atque eos assumenda dolore
@@ -42,13 +69,24 @@ function Header() {
       </Box>
       <Box
         sx={{
-          width: "50%",
+          width: {
+            xs: "100%",
+            sm: "50%",
+          },
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <img
           src={hero}
           alt="Your Image"
-          style={{ width: "", height: "500px", padding: "0px 15px 0px 10px" }}
+          style={{
+            width: "100%",
+            maxWidth: { xs: "350px", sm: "550px" },
+            height: "auto",
+            padding: "0px 15px 0px 10px",
+          }}
         />
       </Box>
     </Stack>

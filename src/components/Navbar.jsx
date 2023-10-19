@@ -14,7 +14,7 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import { Badge, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Home", "Products", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar({ cart }) {

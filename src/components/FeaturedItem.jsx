@@ -48,13 +48,18 @@ function FeaturedItem({ addToCart }) {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ut
         itaque, fugiat
       </Typography>
-      <div style={{ textAlign: "center", padding: "20px" }}>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        justifyContent="center"
+        alignItems="center"
+        sx={{ padding: "20px 0" }}
+      >
         {categories?.map((category) => (
           <Button
             key={category}
             variant="outlined"
-            style={{
-              marginRight: "20px",
+            sx={{
+              margin: "10px",
               color: category === activeCategory ? "white" : "black",
               backgroundColor:
                 category === activeCategory ? "#ee2761" : "#d4f8fc",
@@ -63,24 +68,8 @@ function FeaturedItem({ addToCart }) {
           >
             {category}
           </Button>
-          // <div
-          //   key={category}
-          //   variant="outlined"
-          //   color={category === activeCategory ? "primary" : "default"}
-          //   onClick={() => setActiveCategory(category)}
-          // >
-          //   {category}
-          // </div>
         ))}
-        {/* <div>
-          <h2>Products in {activeCategory}</h2>
-          <ul>
-            {products.map((product) => (
-              <li key={product.id}>{product.title}</li>
-            ))}
-          </ul>
-        </div> */}
-      </div>
+      </Stack>
 
       <Box
         sx={{
@@ -90,7 +79,7 @@ function FeaturedItem({ addToCart }) {
       >
         <Grid container rowSpacing={8} columnSpacing={2} mx={2}>
           {products?.map((product, index) => (
-            <Grid item xs={2} sm={4} md={3} key={index}>
+            <Grid item xs={12} sm={6} md={4} key={index}>
               <Box>
                 <ProductCard addToCart={addToCart} product={product} />
               </Box>

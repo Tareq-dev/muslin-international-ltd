@@ -18,6 +18,7 @@ function NewArival() {
     >
       <Box
         sx={{
+          display: { xs: "none", sm: "block" },
           height: "400px",
           width: "50%",
           position: "relative",
@@ -41,7 +42,7 @@ function NewArival() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          width: "50%",
+          width: { xs: "100%", sm: "50%" },
         }}
       >
         <Box

@@ -6,10 +6,12 @@ import {
   Typography,
   Button,
   Box,
+  Grid,
 } from "@mui/material";
 import gadget from "../assets/images/gadget.jpg";
 import headphones from "../assets/images/headphones.jpg";
 import makeup from "../assets/images/makeup.jpg";
+
 const fashionBlogPosts = [
   {
     title: "Top 10 Summer Wardrobe Essentials",
@@ -37,36 +39,38 @@ const fashionBlogPosts = [
 function Blog() {
   return (
     <>
-      <Typography variant="h3" fontWeight="bold" my={8}>
+      <Typography variant="h3" fontWeight="bold" my={8} textAlign="center">
         Our Blog
       </Typography>
 
-      <Box sx={{ display: "flex", gap: 2, justifyContent: "center" }}>
+      <Grid container spacing={2} justifyContent="center">
         {fashionBlogPosts.map((post, index) => (
-          <Card key={index} sx={{ maxWidth: 345 }}>
-            <CardMedia
-              component="img"
-              height="200"
-              image={post?.image}
-              alt={post.title}
-            />
-            <CardContent>
-              <Typography variant="subtitle1" component="div" fontWeight="bold">
-                {post.title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {post.date}
-              </Typography>
-              <Typography variant="body2" paragraph>
-                {post.description}
-              </Typography>
-              <Button size="small" color="primary">
-                Read More
-              </Button>
-            </CardContent>
-          </Card>
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardMedia
+                component="img"
+                height="200"
+                image={post?.image}
+                alt={post.title}
+              />
+              <CardContent>
+                <Typography variant="subtitle1" component="div" fontWeight="bold">
+                  {post.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {post.date}
+                </Typography>
+                <Typography variant="body2" paragraph>
+                  {post.description}
+                </Typography>
+                <Button size="small" color="primary">
+                  Read More
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
         ))}
-      </Box>
+      </Grid>
     </>
   );
 }

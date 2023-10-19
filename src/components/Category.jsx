@@ -12,13 +12,14 @@ function Category() {
       </Typography>
       <Stack
         sx={{ my: 10 }}
-        direction="row"
+        direction={{ xs: "column", sm: "row" }}
         spacing={4}
         justifyContent="center"
       >
         <Box
           sx={{
-            width: "200px",
+            width: "100%",
+            sm: "200px",
             height: "200px",
             border: "2px solid #ee2761",
             borderRadius: "15px",
@@ -44,7 +45,8 @@ function Category() {
         </Box>
         <Box
           sx={{
-            width: "200px",
+            width: "100%",
+            sm: "200px",
             height: "200px",
             border: "2px solid #ee2761",
             borderRadius: "15px",
@@ -70,24 +72,23 @@ function Category() {
         </Box>
         <Box
           sx={{
-            width: "200px",
+            width: "100%",
+            sm: "200px",
             height: "200px",
             border: "2px solid #ee2761",
             borderRadius: "15px",
           }}
         >
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Box sx={{ display: "flex", justifyContent: "center", my: "16px" }}>
-              <img
-                src={jewelary}
-                alt="jewelary"
-                style={{
-                  width: "80px",
-                  height: "80px",
-                  padding: "0px 15px 0px 10px",
-                }}
-              />
-            </Box>
+          <Box sx={{ display: "flex", justifyContent: "center", my: "16px" }}>
+            <img
+              src={jewelary}
+              alt="jewelary"
+              style={{
+                width: "80px",
+                height: "80px",
+                padding: "0px 15px 0px 10px",
+              }}
+            />
           </Box>
           <Typography variant="h5" textAlign="center">
             Jewelery
@@ -98,24 +99,23 @@ function Category() {
         </Box>
         <Box
           sx={{
-            width: "200px",
+            width: "100%",
+            sm: "200px",
             height: "200px",
             border: "2px solid #ee2761",
             borderRadius: "15px",
           }}
         >
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Box sx={{ display: "flex", justifyContent: "center", my: "16px" }}>
-              <img
-                src={electronics}
-                alt="electronics"
-                style={{
-                  width: "80px",
-                  height: "80px",
-                  padding: "0px 15px 0px 10px",
-                }}
-              />
-            </Box>
+          <Box sx={{ display: "flex", justifyContent: "center", my: "16px" }}>
+            <img
+              src={electronics}
+              alt="electronics"
+              style={{
+                width: "80px",
+                height: "80px",
+                padding: "0px 15px 0px 10px",
+              }}
+            />
           </Box>
           <Typography variant="h5" textAlign="center">
             Electronics
