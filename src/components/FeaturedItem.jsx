@@ -35,7 +35,7 @@ function FeaturedItem({ addToCart }) {
   }, [activeCategory]);
 
   return (
-    <Box>
+    <Box id="Products">
       <Typography variant="h3" fontWeight="bold" textAlign="center">
         Featured Item
       </Typography>

@@ -11,6 +11,7 @@ function Header() {
 
   return (
     <Stack
+      id="Home"
       direction={{ xs: "column", sm: "row" }}
       height={{ xs: "auto", sm: "500px" }}
       bgcolor="#d4f8fc"
@@ -85,7 +86,7 @@ function Header() {
             width: "100%",
             maxWidth: { xs: "350px", sm: "550px" },
             height: "auto",
-            padding: "0px 15px 0px 10px",
+            
           }}
         />
       </Box>

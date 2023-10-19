@@ -13,6 +13,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import { Badge, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
+// import { NavHashLink } from "react-router-hash-link";
 
 const pages = ["Home", "Products", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -117,7 +118,7 @@ function Navbar({ cart }) {
           variant="h5"
           noWrap
           component="a"
-          href="#app-bar-with-responsive-menu"
+          href="/"
           sx={{
             mr: 2,
             display: { xs: "flex", md: "none" },
